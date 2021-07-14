@@ -22,7 +22,7 @@ def generate_csv_from_queryset(queryset, csv_name = "query_csv"):
         for query in queryset:
             csv_row = []
             for field in queryset.first()._meta.local_fields:
-                csv_row.append(getattr(query, query._meta.get_field(field.name).attname))
+                csv_row.append(getattr(query, field.attname))
             writer.writerow(csv_row)
 
         return response
