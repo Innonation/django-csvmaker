@@ -24,6 +24,6 @@ queryset = PracticeDetails.objects.all()
 
 csv_name = 'practice_details'
 
-result = verify_cap(country, cap)
+result = generate_csv_from_queryset(queryset, csv_name)
 
 
